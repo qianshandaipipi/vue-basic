@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/v2.6.10/vue.js"></script>
+</head>
+
+<body>
+
+
+    <div id="root">
+
+        <p>今天天气很{{info }} </p>
+        <button @click="btn">改变天气</button>
+    </div>
+    <script>
+
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data() {
+                return {
+                    isok: true
+                }
+            },
+            methods: {
+                btn() {
+                    this.isok = !this.isok
+                }
+            },
+            computed: {
+                info() {
+                    return this.isok ? '炎热' : '凉爽'
+                }
+            },
+
+            watch: {
+           isok:{
+           handler(){
+           
+           }
+           }
+            },
+        })
+    </script>
+
+
+</body>
+
+</html>

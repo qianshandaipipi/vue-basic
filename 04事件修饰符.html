@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/v2.6.10/vue.js"></script>
+
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <div class="father" @click.capture='btn1'>
+            我是父亲
+            <div class="son" @click='btn2'>
+                我是儿子
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data() {
+                return {
+
+                }
+            },
+            methods: {
+                btn1() {
+
+                    console.log('我是父亲');
+                },
+                btn2(e) {
+                    // e.stopPropagation();
+                    
+                    
+                    console.log('我是儿子');
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
