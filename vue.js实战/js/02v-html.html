@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+
+    <title>v-html使用</title>
+    <script src="./v2.6.10/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <p v-html="link"></p>
+        <p v-text="text"></p>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    link: '<a href="http://www.baidu.com">百度</a>',
+                    text:'<span>我喜欢琴宝</span>'
+                }
+            },
+        })
+
+        console.log(vm.link);
+        
+
+
+
+    </script>
+</body>
+
+</html>

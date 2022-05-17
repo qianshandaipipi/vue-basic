@@ -10,13 +10,12 @@
 </head>
 
 <body>
-
-
     <div id="root">
+        <p>{{numbers.a}} </p>
+        <button @click="btn">a+1</button>
 
-        <p>今天天气很{{info }} </p>
-        <button @click="btn">改变天气</button>
     </div>
+
     <script>
 
         Vue.config.productionTip = false
@@ -24,33 +23,30 @@
             el: '#root',
             data() {
                 return {
-                    isok: true
+                    numbers: {
+                        a: 1,
+                        b: 2
+                    }
                 }
             },
             methods: {
                 btn() {
-                    this.isok = !this.isok
+                    this.numbers.a++
                 }
             },
-            computed: {
-                info() {
-                    return this.isok ? '炎热' : '凉爽'
-                }
-            },
-
             watch: {
-                isok: {
-                    // immediate: true,
+                "numbers.a": {
                     handler() {
-                        console.log('事件被改变了');
-
+                        console.log('a被改变了');
                     }
                 }
             },
         })
+
+   
     </script>
-
-
 </body>
 
 </html>
+
+
